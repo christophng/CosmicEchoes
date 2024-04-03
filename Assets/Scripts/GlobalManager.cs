@@ -6,7 +6,7 @@ public class GlobalManager : MonoBehaviour
 
     public GameObject pauseMenu;
 
-    public ObjectivePopup objectivePopup;
+    public GameObject objectivePopup;
 
     public PlayerController playerController;
 
@@ -31,18 +31,5 @@ public class GlobalManager : MonoBehaviour
     // Ensure the instance is not destroyed when reloading scenes
     private void Awake()
     {
-        // if (instance == null)
-        // {
-        //     instance = this;
-        //     DontDestroyOnLoad(gameObject);
-        //     DontDestroyOnLoad(resetMenu);
-        //     DontDestroyOnLoad(startPauseMenu);
-        //     DontDestroyOnLoad(goalUI);
-        //     // DontDestroyOnLoad(canMoveEnvironment);
-        // }
-        // else
-        // {
-        //     Destroy(gameObject);
-        // }
     }
 }

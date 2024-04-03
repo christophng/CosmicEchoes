@@ -21,6 +21,8 @@ public class ObjectiveSpawner : MonoBehaviour
                 
                 SatelliteDishCollectObjective satteliteDishCollectObjective = new SatelliteDishCollectObjective(playerController);
 
+                Debug.Log("SPAWNING");
+
                 // objectiveManager.InitializeObjective(playerController);
             }
             else
