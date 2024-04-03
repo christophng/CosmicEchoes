@@ -23,7 +23,7 @@ public class ProgressBar : MonoBehaviour
         
         if ((Input.GetKeyDown(KeyCode.A)) || (Input.GetKeyDown(KeyCode.D)) || (Input.GetKeyDown(KeyCode.S)) || (Input.GetKeyDown(KeyCode.W)))
         {
-            LoseFill(20);
+            LoseFill(1);
         }
 
         if(current <= 0)

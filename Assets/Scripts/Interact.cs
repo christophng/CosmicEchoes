@@ -51,10 +51,7 @@ public class Interact : MonoBehaviour
         if(parent.Equals("hangar_roundA"))
         {
             pickupUI.GetComponentInChildren<Text>().text = "F";
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                SceneManager.LoadScene("Spaceship");
-            }
+            
         }
 
         if (!parent.Equals("hangar_roundA")){
@@ -96,7 +93,10 @@ public class Interact : MonoBehaviour
         }
         if (activeScene.name.Equals("Space"))
         {
-            
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                SceneManager.LoadScene("Spaceship");
+            }
         }
     }
 
