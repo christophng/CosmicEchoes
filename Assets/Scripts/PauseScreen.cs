@@ -5,7 +5,7 @@ public class PauseScreen : MonoBehaviour
 {
     void Start()
     {
-        ShowPauseScreen();
+        HidePauseScreen();
     }
 
     private void Update()
