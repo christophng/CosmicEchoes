@@ -37,6 +37,9 @@ public class SatelliteDishCollectObjective : IObjective
         {
             Debug.Log("Objective SatelliteDish completed!");
             isCompleted = true;
+            GlobalManager.Instance.objectivePopup.gameObject.SetActive(false);
+
+            // Initialize next objective here
         }
     }
 }
