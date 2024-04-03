@@ -26,7 +26,9 @@ public class PauseScreen : MonoBehaviour
     private void ShowPauseScreen()
     {
         GameObject pauseUI = GlobalManager.Instance.pauseMenu;
+        Debug.Log(pauseUI);
         pauseUI.SetActive(true);
+        Debug.Log("Showing Pause Screen");
         Time.timeScale = 0f; // Pause the game
     }
 
@@ -34,7 +36,7 @@ public class PauseScreen : MonoBehaviour
     {
         GameObject pauseUI = GlobalManager.Instance.pauseMenu;
         pauseUI.SetActive(false);
-        Debug.Log("Setting False");
+        Debug.Log("Hiding Pause Screen");
         Time.timeScale = 1f; // Resume the game
     }
 
