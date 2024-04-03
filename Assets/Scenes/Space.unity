@@ -8450,6 +8450,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3010643251951892635, guid: 01488cff1fd87d54db659d3fdb991a0d, type: 3}
   m_PrefabInstance: {fileID: 6005263738157407054}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1121199859 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3010643251961141109, guid: 01488cff1fd87d54db659d3fdb991a0d, type: 3}
+  m_PrefabInstance: {fileID: 6005263738157407054}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1129255292 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 81bea2437fa1c7c4794cfca13542937f, type: 3}
@@ -10905,6 +10910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current: 100
   mask: {fileID: 2067897702}
+  anim: {fileID: 1121199859}
 --- !u!114 &1458116274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16190,6 +16196,10 @@ PrefabInstance:
     - target: {fileID: 4565985567875890314, guid: 38296d29428e1fd42a55bf4126799f77, type: 3}
       propertyPath: m_Name
       value: PauseCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565985567875890314, guid: 38296d29428e1fd42a55bf4126799f77, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7337078104202092599, guid: 38296d29428e1fd42a55bf4126799f77, type: 3}
       propertyPath: m_TargetGraphic
