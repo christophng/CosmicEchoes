@@ -6,6 +6,10 @@ public class GlobalManager : MonoBehaviour
 
     public GameObject pauseMenu;
 
+    public ObjectivePopup objectivePopup;
+
+    public PlayerController playerController;
+
     public static GlobalManager Instance
     {
         get
