@@ -12,6 +12,7 @@ public class ObjectivePickup : MonoBehaviour
     {
         isInteract = false;
         parent = "";
+        DontDestroyOnLoad(gameObject);
     }
     private void Update()
     {
@@ -45,7 +46,15 @@ public class ObjectivePickup : MonoBehaviour
     {
         // say item acquired
         // store item in object, hide object
+
+        GlobalManager.Instance.playerController.CollectSatelliteDish();
+
+
         Debug.Log("item acquired");
+
+        Inventory.Instance.AddItem(this.transform.parent.gameObject.name);
+
+        Debug.Log("New inven: " + Inventory.Instance.GetCurrentItem());
 
         this.transform.parent.gameObject.SetActive(false);
 

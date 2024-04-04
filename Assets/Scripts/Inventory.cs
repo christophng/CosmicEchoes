@@ -6,7 +6,7 @@ public class Inventory : MonoBehaviour
     private static Inventory instance;
 
     // Current item in the inventory
-    private GameObject currentItem;
+    private string currentItem = "";
 
     // Public property to access the singleton instance
     public static Inventory Instance
@@ -32,7 +32,7 @@ public class Inventory : MonoBehaviour
     }
 
     // Add an item to the inventory (replaces the current item)
-    public void AddItem(GameObject newItem)
+    public void AddItem(string newItem)
     {
         currentItem = newItem;
     }
@@ -40,11 +40,11 @@ public class Inventory : MonoBehaviour
     // Remove the current item from the inventory
     public void RemoveItem()
     {
-        currentItem = null;
+        currentItem = "";
     }
 
     // Get the current item from the inventory
-    public GameObject GetCurrentItem()
+    public string GetCurrentItem()
     {
         return currentItem;
     }
@@ -52,7 +52,7 @@ public class Inventory : MonoBehaviour
     // Check if the inventory contains an item
     public bool ContainsItem()
     {
-        return currentItem != null;
+        return currentItem != "";
     }
 
     // Ensure that the instance is not destroyed when loading new scenes

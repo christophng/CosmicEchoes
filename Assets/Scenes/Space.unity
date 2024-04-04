@@ -154,7 +154,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1843038273}
   objectivePopup: {fileID: 1895970517}
+  satelliteDishObj: {fileID: 1404805716}
   playerController: {fileID: 1766952893}
+  objectiveManager: {fileID: 651912002}
 --- !u!4 &128518
 Transform:
   m_ObjectHideFlags: 0
@@ -6203,8 +6205,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.66540235, y: 0.023433654, z: -0.020906817, w: 0.74582404}
-  m_LocalPosition: {x: -6.9078565, y: 80.49997, z: -13.136658}
+  m_LocalRotation: {x: 0.6662101, y: 0.00000007815557, z: -0.00000006981837, w: 0.7457641}
+  m_LocalPosition: {x: -6.330002, y: 80.49997, z: -13.050005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11002,9 +11004,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c46461bc0808228459a3617f9f42d5ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AppleCollectedEvent:
-    m_PersistentCalls:
-      m_Calls: []
   SatelliteDishCollectedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -14007,12 +14006,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5089179689975865247, guid: b018165f7e1af704b918f778f3fdf15a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089179689975865247, guid: b018165f7e1af704b918f778f3fdf15a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -206
+      value: -139
       objectReference: {fileID: 0}
     - target: {fileID: 5089179689975865247, guid: b018165f7e1af704b918f778f3fdf15a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -175
+      value: -84
       objectReference: {fileID: 0}
     - target: {fileID: 6103698880970947204, guid: b018165f7e1af704b918f778f3fdf15a, type: 3}
       propertyPath: m_AnchorMax.x
@@ -14031,12 +14034,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6103698880970947204, guid: b018165f7e1af704b918f778f3fdf15a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6103698880970947204, guid: b018165f7e1af704b918f778f3fdf15a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6103698880970947204, guid: b018165f7e1af704b918f778f3fdf15a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -206
+      value: -139
       objectReference: {fileID: 0}
     - target: {fileID: 6103698880970947204, guid: b018165f7e1af704b918f778f3fdf15a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -199.36182
+      value: -96
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

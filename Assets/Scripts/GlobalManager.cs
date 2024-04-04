@@ -8,6 +8,8 @@ public class GlobalManager : MonoBehaviour
 
     public GameObject objectivePopup;
 
+    public GameObject satelliteDishObj;
+
     public PlayerController playerController;
 
     public ObjectiveManager objectiveManager;
@@ -38,5 +40,6 @@ public class GlobalManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(objectiveManager);
         DontDestroyOnLoad(pauseMenu);
+        DontDestroyOnLoad(satelliteDishObj);
     }
 }

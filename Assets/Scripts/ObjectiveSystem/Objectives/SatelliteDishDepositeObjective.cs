@@ -13,7 +13,7 @@ public class SatelliteDishDepositObjective : MonoBehaviour
         this.isCompleted = false;
         this.Name = "SatelliteDishDeposit";
         Debug.Log("CREATING 123");
-        DisplayObjective("Satellite Deposit TEST");
+        DisplayObjective("Bring the Satellite back to base to deposit!");
         playerController.SatelliteDishDepositEvent.AddListener(OnSatelliteDishDeposit);
     }
 
