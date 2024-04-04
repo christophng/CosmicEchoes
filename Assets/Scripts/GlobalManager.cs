@@ -10,6 +10,8 @@ public class GlobalManager : MonoBehaviour
 
     public PlayerController playerController;
 
+    public ObjectiveManager objectiveManager;
+
     public static GlobalManager Instance
     {
         get
@@ -31,5 +33,10 @@ public class GlobalManager : MonoBehaviour
     // Ensure the instance is not destroyed when reloading scenes
     private void Awake()
     {
+        DontDestroyOnLoad(objectivePopup);
+        DontDestroyOnLoad(playerController);
+        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(objectiveManager);
+        DontDestroyOnLoad(pauseMenu);
     }
 }

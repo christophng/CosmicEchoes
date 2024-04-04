@@ -11,6 +11,7 @@ public class TextTypingAnimation : MonoBehaviour
 
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
     }
 
     public void StartTypingAnimation(string newText)

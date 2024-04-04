@@ -1,12 +1,13 @@
 using UnityEngine;
+using System.Collections;
 
-public class SatelliteDishDepositObjective : IObjective
+public class SatelliteDishDepositObjective : MonoBehaviour
 {
     public bool isCompleted { get; set; }
     public string Name { get; set; }
     public PlayerController playerController { get; set; }
 
-    public SatelliteDishDepositObjective(PlayerController playerController)
+    public void Initialize(PlayerController playerController)
     {
         this.playerController = playerController;
         this.isCompleted = false;
@@ -42,9 +43,9 @@ public class SatelliteDishDepositObjective : IObjective
         
     }
 
-    private void OnSatelliteDishDeposit()
+    private void OnSatelliteDishDeposit(bool isdeposit)
     {
-        if (!isCompleted)
+        if (!isCompleted && isdeposit)
         {
             Complete();
         }
@@ -56,21 +57,21 @@ public class SatelliteDishDepositObjective : IObjective
         {
             Debug.Log("Objective SatelliteDish Deposit completed!");
             isCompleted = true;
-            DisplayObjective("Objective SatelliteDish Deposit completed!")
+            DisplayObjective("Objective SatelliteDish Deposit completed!");
 
             // Start the coroutine to wait for 3 seconds
-            StartCoroutine(WaitAndProceed());
+            // StartCoroutine(WaitAndProceed());
         }
     }
 
-    IEnumerator WaitAndProceed()
-    {
-        // Wait for 3 seconds
-        yield return new WaitForSeconds(5);
+    // IEnumerator WaitAndProceed()
+    // {
+    //     // Wait for 3 seconds
+    //     yield return new WaitForSeconds(5);
 
-        // After 3 seconds, deactivate the objective popup
-        GlobalManager.Instance.objectivePopup.SetActive(false);
+    //     // After 3 seconds, deactivate the objective popup
+    //     GlobalManager.Instance.objectivePopup.SetActive(false);
 
-        // Initialize the next objective here
-    }
+    //     // Initialize the next objective here
+    // }
 }
