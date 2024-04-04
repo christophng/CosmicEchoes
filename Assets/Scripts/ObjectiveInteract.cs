@@ -10,16 +10,14 @@ public class ObjectiveInteract : MonoBehaviour
     private void Start()
     {
         isInteract = false;
-        parent = "";
+        parent = transform.parent != null ? transform.parent.name : "";
     }
 
     private void Update()
     {
         if (isInteract)
         {
-
             if (parent.Equals("ObjectiveDesk")){
-
                 if(Input.GetKeyDown(KeyCode.I))
                 {
                     Deposit();

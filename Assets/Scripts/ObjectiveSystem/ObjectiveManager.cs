@@ -5,22 +5,46 @@ using System.Collections.Generic;
 
 public class ObjectiveManager : MonoBehaviour
 {
-    public List<IObjective> objectives = new List<IObjective>();
 
-    public void InitializeObjective(PlayerController playerController)
+    private PlayerController playerController;
+
+    void Start() {
+        this.playerController = GlobalManager.Instance.playerController;
+    }
+
+    public void InitializeSatelliteDishCollectObjective()
     {
-        // ObjectiveA objectiveA = new ObjectiveA(playerController);
-        // objectives.Add(objectiveA);
-        // Debug.Log("Added " + objectiveA.Name);
+        // Find or create an empty GameObject to hold the objective script
+        GameObject objectiveGO = new GameObject("SatelliteDishCollectObjective");
+        
+        // Add the SatelliteDishCollectObjective component to the GameObject
+        SatelliteDishCollectObjective satelliteDishObjective = objectiveGO.AddComponent<SatelliteDishCollectObjective>();
+        
+        // Initialize the objective
+        satelliteDishObjective.Initialize(playerController);
 
-        // SatelliteDishCollectObjective satteliteDishCollectObjective = new SatelliteDishCollectObjective(playerController);
-        // objectives.Add(satteliteDishCollectObjective);
-        // Debug.Log("Added " + satteliteDishCollectObjective.Name);
+        // Make sure the objective persists across scene changes
+        DontDestroyOnLoad(objectiveGO);
+        
+        Debug.Log("SPAWNING COLLECT");
 
-        // These are the initial objectives. we should only initialize these first
+        // objectiveManager.InitializeObjective(playerController);
 
-        // Actually, since its pretty straightforward to initialize (its literally just creating an instance of the objective class and we can call PlayerController via GlobalManager) this isnt neccessary right now
+    }
 
-        // Add more objectives as needed
+    public void InitializeSatelliteDishDepositObjective() {
+        // Find or create an empty GameObject to hold the objective script
+        GameObject objectiveGO = new GameObject("SatelliteDishDepositObjective");
+        
+        // Add the SatelliteDishCollectObjective component to the GameObject
+        SatelliteDishDepositObjective satelliteDishObjective = objectiveGO.AddComponent<SatelliteDishDepositObjective>();
+        
+        // Initialize the objective
+        satelliteDishObjective.Initialize(playerController);
+
+        // Make sure the objective persists across scene changes
+        DontDestroyOnLoad(objectiveGO);
+        
+        Debug.Log("SPAWNING DEPOSIT");
     }
 }

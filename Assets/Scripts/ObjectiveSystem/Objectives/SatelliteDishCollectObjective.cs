@@ -1,16 +1,17 @@
 using UnityEngine;
+using System.Collections;
 
-public class SatelliteDishCollectObjective : IObjective
+public class SatelliteDishCollectObjective : MonoBehaviour
 {
     public bool isCompleted { get; set; }
     public string Name { get; set; }
     public PlayerController playerController { get; set; }
 
-    public SatelliteDishCollectObjective(PlayerController playerController)
+    public void Initialize(PlayerController playerController)
     {
         this.playerController = playerController;
         this.isCompleted = false;
-        this.Name = "SatelliteDish";
+        this.Name = "SatelliteDishCollect";
         Debug.Log("CREATING");
         DisplayObjective("Satellite Collect Objective TEST");
         playerController.SatelliteDishCollectedEvent.AddListener(OnSatelliteDishCollect);
@@ -42,9 +43,9 @@ public class SatelliteDishCollectObjective : IObjective
         
     }
 
-    private void OnSatelliteDishCollect()
+    private void OnSatelliteDishCollect(bool isCollect)
     {
-        if (!isCompleted)
+        if (!isCompleted && isCollect)
         {
             Complete();
         }
@@ -56,22 +57,24 @@ public class SatelliteDishCollectObjective : IObjective
         {
             Debug.Log("Objective SatelliteDish completed!");
             isCompleted = true;
-            DisplayObjective("Objective SatelliteDish Collect completed!")
+            // DisplayObjective("Objective SatelliteDish Collect completed!");
 
             // Start the coroutine to wait for 3 seconds
-            StartCoroutine(WaitAndProceed());
+            // StartCoroutine(WaitAndProceed());
+
+            GlobalManager.Instance.objectiveManager.InitializeSatelliteDishDepositObjective();
         }
     }
 
-    IEnumerator WaitAndProceed()
-    {
-        // Wait for 3 seconds
-        yield return new WaitForSeconds(5);
+    // IEnumerator WaitAndProceed()
+    // {
+    //     // Wait for 3 seconds
+    //     yield return new WaitForSeconds(5);
 
-        // After 3 seconds, deactivate the objective popup
-        GlobalManager.Instance.objectivePopup.SetActive(false);
+    //     // After 3 seconds, deactivate the objective popup
+    //     GlobalManager.Instance.objectivePopup.SetActive(false);
 
-        // Initialize next objective here
-        SatelliteDishDepositObjective satelliteDishDepositObjective = new SatelliteDishDepositObjective(playerController);
-    }
+    //     // Initialize next objective here
+    //     SatelliteDishDepositObjective satelliteDishDepositObjective = new SatelliteDishDepositObjective(playerController);
+    // }
 }

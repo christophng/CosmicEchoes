@@ -7,6 +7,7 @@ public class ObjectiveSpawner : MonoBehaviour
 {
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
         Debug.Log("Test");
         PlayerController playerController = FindObjectOfType<PlayerController>();
         if (playerController != null)
@@ -14,16 +15,7 @@ public class ObjectiveSpawner : MonoBehaviour
             ObjectiveManager objectiveManager = FindObjectOfType<ObjectiveManager>();
             if (objectiveManager != null)
             {
-
-                // Here we spawn the starting objectives when the game starts
-
-                // objectiveManager.InitializeObjective(playerController);
-                
-                SatelliteDishCollectObjective satteliteDishCollectObjective = new SatelliteDishCollectObjective(playerController);
-
-                Debug.Log("SPAWNING");
-
-                // objectiveManager.InitializeObjective(playerController);
+                GlobalManager.Instance.objectiveManager.InitializeSatelliteDishCollectObjective();
             }
             else
             {
