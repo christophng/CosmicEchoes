@@ -1,19 +1,19 @@
 using UnityEngine;
 
-public class SatelliteDishCollectObjective : IObjective
+public class SatelliteDishDepositObjective : IObjective
 {
     public bool isCompleted { get; set; }
     public string Name { get; set; }
     public PlayerController playerController { get; set; }
 
-    public SatelliteDishCollectObjective(PlayerController playerController)
+    public SatelliteDishDepositObjective(PlayerController playerController)
     {
         this.playerController = playerController;
         this.isCompleted = false;
-        this.Name = "SatelliteDish";
-        Debug.Log("CREATING");
-        DisplayObjective("Satellite Collect Objective TEST");
-        playerController.SatelliteDishCollectedEvent.AddListener(OnSatelliteDishCollect);
+        this.Name = "SatelliteDishDeposit";
+        Debug.Log("CREATING 123");
+        DisplayObjective("Satellite Deposit TEST");
+        playerController.SatelliteDishDepositEvent.AddListener(OnSatelliteDishDeposit);
     }
 
     // Call this method to display the objective popup with the specified description
@@ -42,7 +42,7 @@ public class SatelliteDishCollectObjective : IObjective
         
     }
 
-    private void OnSatelliteDishCollect()
+    private void OnSatelliteDishDeposit()
     {
         if (!isCompleted)
         {
@@ -54,9 +54,9 @@ public class SatelliteDishCollectObjective : IObjective
     {
         if (!isCompleted)
         {
-            Debug.Log("Objective SatelliteDish completed!");
+            Debug.Log("Objective SatelliteDish Deposit completed!");
             isCompleted = true;
-            DisplayObjective("Objective SatelliteDish Collect completed!")
+            DisplayObjective("Objective SatelliteDish Deposit completed!")
 
             // Start the coroutine to wait for 3 seconds
             StartCoroutine(WaitAndProceed());
@@ -71,7 +71,6 @@ public class SatelliteDishCollectObjective : IObjective
         // After 3 seconds, deactivate the objective popup
         GlobalManager.Instance.objectivePopup.SetActive(false);
 
-        // Initialize next objective here
-        SatelliteDishDepositObjective satelliteDishDepositObjective = new SatelliteDishDepositObjective(playerController);
+        // Initialize the next objective here
     }
 }
