@@ -7,13 +7,11 @@ public class ObjectivePickup : MonoBehaviour
 {
     public bool isInteract;
     private string parent;
-    private Transform storage;
 
     private void Start()
     {
         isInteract = false;
         parent = "";
-        storage = GameObject.Find("Storage").transform;
     }
     private void Update()
     {
@@ -49,7 +47,6 @@ public class ObjectivePickup : MonoBehaviour
         // store item in object, hide object
         Debug.Log("item acquired");
 
-        this.transform.parent.parent = storage;
         this.transform.parent.gameObject.SetActive(false);
 
 
