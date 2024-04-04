@@ -13,7 +13,7 @@ public class SatelliteDishCollectObjective : MonoBehaviour
         this.isCompleted = false;
         this.Name = "SatelliteDishCollect";
         Debug.Log("CREATING");
-        DisplayObjective("Satellite Collect Objective TEST");
+        DisplayObjective("Find the satellite and pick it up!");
         playerController.SatelliteDishCollectedEvent.AddListener(OnSatelliteDishCollect);
     }
 

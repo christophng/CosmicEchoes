@@ -47,6 +47,13 @@ public class ObjectiveInteract : MonoBehaviour
         /**
         * Chris put ur code here
         */
+
+        if (Inventory.Instance.GetCurrentItem().Equals("satelliteDish")) {
+            Debug.Log("OBJECTIVE COMPLETED");
+            GlobalManager.Instance.playerController.DepositSatelliteDish();
+            Inventory.Instance.RemoveItem();
+        }
+
         Debug.Log("Deposit");
     }
 
