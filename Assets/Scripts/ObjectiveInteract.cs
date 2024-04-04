@@ -1,6 +1,8 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ObjectiveInteract : MonoBehaviour
@@ -23,11 +25,11 @@ public class ObjectiveInteract : MonoBehaviour
                     Deposit();
                 }
             }
+            
         }
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("trigger enter");
         parent = this.gameObject.transform.parent.name;
         isInteract = true;
 
@@ -36,6 +38,7 @@ public class ObjectiveInteract : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         isInteract = false;
+        parent = "";
     }
 
 
@@ -46,4 +49,6 @@ public class ObjectiveInteract : MonoBehaviour
         */
         Debug.Log("Deposit");
     }
+
+    
 }
