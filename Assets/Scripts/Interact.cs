@@ -18,6 +18,8 @@ public class Interact : MonoBehaviour
     public GameObject throwUI;
     private string parent;
 
+    public ObjectiveInteract objInteract;
+
 
     private Scene activeScene;
     
@@ -58,6 +60,13 @@ public class Interact : MonoBehaviour
             pickupUI.GetComponentInChildren<Text>().text = "E";
 
         }
+        if (parent.Equals("ObjectiveDesk"))
+        {
+            pickupUI.GetComponentInChildren<Text>().text = "I";
+            objInteract.isInteract = true;
+            //REFERENCE objectiveInteract script and do stuff there
+
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -86,7 +95,7 @@ public class Interact : MonoBehaviour
     {
         if (activeScene.name.Equals("Spaceship"))
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 SceneManager.LoadScene("Space");
             }
