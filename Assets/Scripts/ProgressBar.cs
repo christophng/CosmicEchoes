@@ -36,7 +36,6 @@ public class ProgressBar : MonoBehaviour
 
     public void GetCurrentFill()
     {
-        Debug.Log(current);
         float fillAmount = (float)current / (float)max;
         mask.fillAmount = fillAmount;
     }

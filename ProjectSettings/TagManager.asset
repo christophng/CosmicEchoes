@@ -6,6 +6,7 @@ TagManager:
   tags:
   - OxygenBar
   - InteractUI
+  - ObjectiveItem
   layers:
   - Default
   - TransparentFX
