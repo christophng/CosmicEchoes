@@ -18,7 +18,6 @@ public class Interact : MonoBehaviour
     public GameObject throwUI;
     private string parent;
 
-    public ObjectiveInteract objInteract;
 
 
     private Scene activeScene;
@@ -63,8 +62,6 @@ public class Interact : MonoBehaviour
         if (parent.Equals("ObjectiveDesk"))
         {
             pickupUI.GetComponentInChildren<Text>().text = "I";
-            objInteract.isInteract = true;
-            //REFERENCE objectiveInteract script and do stuff there
 
         }
     }
